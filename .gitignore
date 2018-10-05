@@ -1,0 +1,5 @@
+attic/
+virtualenv/
+*.zip
+*.pyc
+*.done
