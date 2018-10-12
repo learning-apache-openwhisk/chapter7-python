@@ -24,17 +24,24 @@ version3: python.done
 version3-test: version3
 	wsk action invoke python/version3 -r
 
-packages: python.done
-	wsk action update python/packages packages.py 
 
-packages-test: packages
-	wsk action invoke python/packages -r
+requirements: python.done
+	wsk action update python/requirements requirements.py --web true
 
-packages3: python.done
-	wsk action update python/packages3 packages.py --kind python:3
+requirements-test: requirements
+	curl $$(wsk action get python/requirements --url | tail -1)
 
-packages3-test: packages3
-	wsk action invoke python/packages3 -r 
+requirements3: python.done
+	wsk action update python/requirements requirements.py --web true
+
+requirements3-test: requirements3
+	curl $$(wsk action get python/requirements --url | tail -1)
+
+environ: python.done
+	wsk action update python/environ environ.py
+
+environ-test: environ
+	wsk action invoke python/environ -r
 
 zipfile.zip: zipfile/*.py
 	cd zipfile ;\
@@ -50,8 +57,6 @@ zipfile-test: zipfile
 	wsk action invoke python/zipfile -r
 	wsk action invoke python/zipfile-hello -r
 	wsk action invoke python/zipfile-hi -r
-
-virtualenv:
 
 
 
