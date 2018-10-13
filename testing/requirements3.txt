@@ -29,7 +29,7 @@ idna==2.7
 httplib2==0.10.3
 greenlet==0.4.15
 gevent==1.2.1
-Flask==0.12
+Flask==0.12.3
 cssselect==1.0.3
 cryptography==2.3.1
 constantly==15.1.0
