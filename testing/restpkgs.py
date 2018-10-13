@@ -27,11 +27,10 @@ def auth():
     up = os.environ['__OW_API_KEY'].split(":")
     return (up[0], up[1])
 
-import responses
 import requests
 
 def whisk_init():
-    import os.path, json
+    import os, os.path, json
     with open(os.path.expanduser("~/.wskprops"), "r") as f:
         for line in f.readlines():
             [k, v] = line.strip().split("=")
