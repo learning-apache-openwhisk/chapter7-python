@@ -6,13 +6,11 @@ def url(operation):
         os.environ["__OW_NAMESPACE"],
         operation
     )
-    #print(url)
     return url 
 
 def auth():
     up = os.environ['__OW_API_KEY'].split(":")
     return (up[0], up[1])
-
 
 def whisk_activation(id):
     return json.loads(
