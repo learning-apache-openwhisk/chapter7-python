@@ -56,7 +56,6 @@ import json
 
 def main(args):
     """
-    >>>
     >>> import restpkgs as r, httpretty as h, json
     >>> h.enable()
     >>> r.whisk_init()
