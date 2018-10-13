@@ -19,10 +19,10 @@ def url(operation, namespace=None, apihost = None):
 
 def auth():
     """ Extract OpenWhisk authentication keys
-    >>> os.environ["__OW_API_KEY"]="USER:PASS"
+    >>> os.environ["__OW_API_KEY"]="USERNAME:PASSWORD"
     >>> import restpkgs as r
     >>> r.auth()
-    ('USER', 'PASS')
+    ('USERNAME', 'PASSWORD')
     """
     up = os.environ['__OW_API_KEY'].split(":")
     return (up[0], up[1])

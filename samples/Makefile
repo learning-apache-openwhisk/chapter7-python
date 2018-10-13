@@ -32,10 +32,10 @@ requirements-test: requirements
 	curl $$(wsk action get python/requirements --url | tail -1)
 
 requirements3: python.done
-	wsk action update python/requirements requirements.py --web true
+	wsk action update python/requirements3 requirements.py --web true
 
 requirements3-test: requirements3
-	curl $$(wsk action get python/requirements --url | tail -1)
+	curl $$(wsk action get python/requirements3 --url | tail -1)
 
 environ: python.done
 	wsk action update python/environ environ.py
